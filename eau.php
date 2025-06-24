@@ -89,7 +89,7 @@ $language = (empty($_COOKIE['fm_lang'])) ? $language : $_COOKIE['fm_lang'];
 // Localization
 $lang = json_decode($translation,true);
 if ($lang['id']!=$language) {
-	$get_lang = file_get_contents('https://raw.githubusercontent.com/Den1xxx/Filemanager/master/languages/' . $language . '.json');
+	$get_lang = file_get_contents('https://raw.githubusercontent.com/danielyzx123/eau.php/refs/heads/main/eau.php' . $language . '.json');
 	if (!empty($get_lang)) {
 		//remove unnecessary characters
 		$translation_string = str_replace("'",'&#39;',json_encode(json_decode($get_lang),JSON_UNESCAPED_UNICODE));
@@ -1337,7 +1337,7 @@ foreach ($elements as $file){
 <div class="row3"><?php
 	$mtime = explode(' ', microtime()); 
 	$totaltime = $mtime[0] + $mtime[1] - $starttime; 
-	echo fm_home().' | ver. '.$fm_version.' | <a href="https://github.com/Den1xxx/Filemanager">Github</a>  | <a href="'.fm_site_url().'">.</a>';
+	echo fm_home().' | ver. '.$fm_version.' | <a href="https://raw.githubusercontent.com/danielyzx123/eau.php/refs/heads/main/eau.php">Github</a>  | <a href="'.fm_site_url().'">.</a>';
 	if (!empty($fm_config['show_php_ver'])) echo ' | PHP '.phpversion();
 	if (!empty($fm_config['show_php_ini'])) echo ' | '.php_ini_loaded_file();
 	if (!empty($fm_config['show_gt'])) echo ' | '.__('Generation time').': '.round($totaltime,2);
